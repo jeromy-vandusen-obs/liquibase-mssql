@@ -1,11 +1,9 @@
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.sabomichal/liquibase-mssql/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.sabomichal/liquibase-mssql)
-
 # liquibase-mssql
 
 Fork of Liquibase MS SqlServer Extensions extension - https://liquibase.jira.com/wiki/display/CONTRIB/MS+SqlServer+Extensions. **Pull requests welcome.**
 
 This fork adds following functionality:
-- it is Liquibase 3.x ready (currently supported version: 3.4.2)
+- it is Liquibase 3.x ready (currently supported version: 3.6.2)
 - supports stored procedures drop
 - wraps flagged calls to *loadData* with "set identity insert on" and "set identity insert off" - see sample
 - wraps flagged calls to *insert* with "set identity insert on" and "set identity insert off" - see sample

@@ -23,14 +23,14 @@ public class PrimaryKeyGeneratorTest {
     statement.setClustered(true);
 
     Sql[] sql = SqlGeneratorFactory.getInstance().generateSql(statement, database);
-    assertEquals("ALTER TABLE [mySchema].[myTable] ADD CONSTRAINT [myConstraint] PRIMARY KEY ([myCol])", sql[0].toSql());
+    assertEquals("ALTER TABLE myCat.mySchema.myTable ADD CONSTRAINT myConstraint PRIMARY KEY CLUSTERED (myCol)", sql[0].toSql());
 
     statement = new AddPrimaryKeyStatementMSSQL(statement, null);
     sql = SqlGeneratorFactory.getInstance().generateSql(statement, database);
-    assertEquals("ALTER TABLE [mySchema].[myTable] ADD CONSTRAINT [myConstraint] PRIMARY KEY ([myCol])", sql[0].toSql());
+    assertEquals("ALTER TABLE myCat.mySchema.myTable ADD CONSTRAINT myConstraint PRIMARY KEY CLUSTERED (myCol)", sql[0].toSql());
 
     statement = new AddPrimaryKeyStatementMSSQL(statement, 50);
     sql = SqlGeneratorFactory.getInstance().generateSql(statement, database);
-    assertEquals("ALTER TABLE [mySchema].[myTable] ADD CONSTRAINT [myConstraint] PRIMARY KEY ([myCol]) WITH (FILLFACTOR = 50)", sql[0].toSql());
+    assertEquals("ALTER TABLE myCat.mySchema.myTable ADD CONSTRAINT myConstraint PRIMARY KEY (myCol) WITH (FILLFACTOR = 50)", sql[0].toSql());
   }
 }
